@@ -1,34 +1,43 @@
+console.log("Aula 2");newFunction();
 
-console.log("Aula 2")
+function newFunction() {
+  do {
+    while (true) {
+      jogador1 = prompt("Jogador 1: Digite pedra, papel ou tesoura");
+      jogador2 = prompt("Jogador 2: Digite pedra, papel ou tesoura");
 
-/* @@@@ EXIBIÇÃO E CAPTURA DOS DADOS DO USUÁRIO
-- Alert()
-- Confirm()
-- Prompt()
-*/
+      if (jogador1 == "pedra") {
+        if (jogador2 == "tesoura") {
+          alert("Pedra quebra tesoura: Pedra venceu!");
+        } else if (jogador2 == "papel") {
+          alert("Papel envolve a Pedra: Papel venceu!");
+        } else if (jogador2 == "pedra") {
+          alert("Empate, jogue novamente!");
+        }
+      }
+      else if (jogador1 == "tesoura") {
+        if (jogador2 == "pedra") {
+          alert("Pedra quebra tesoura: Pedra venceu!");
+        } else if (jogador2 == "papel") {
+          alert("tesoura corta papel: Tsoura venceu!");
+        } else if (jogadoe2 == "tesoura") {
+          alert("Empate, jogue novamente!");
+        }
+      }
 
-//Indo além do console.log...
-//@@ ALERT()
+      else if (jogador1 == "papel") {
+        if (jogador2 == "pedra") {
+          alert("Papel envolve pedra: Papel venceu!");
+        } else if (jogador2 == "tesoura") {
+          alert("Tesoura corta papel: Tesoura venceu!");
+        } else if (jogador2 == "papel") {
+          alert("Empate, jogue novamente!");
+        }
+
+      }
+
+    }
 
 
-//@@ CONFIRM()
-
-
-//@@ PROMPT()
-
-
-/// @@@ CONVERSÃO DE DADOS EM JS
-
-
-/// @@@ FUNÇÕES MATEMÁTICAS EM JS
-
-
-/* @@@@ Dicas Mesa de Trabalho: Por onde começar a realizar a atividade ??
-1 - Capturar a escolha de vocês (1, 2 ou 3)
-    - Sugiro converter para inteiro e guardar em uma variável.
-2 - Capturar a escolha da "máquina". 
-    - Fazer isso, usando o Math.Random() com algum intervalo;
-3 - Testar (Switch e IF) quem foi o ganhador/perdedor da rodada, ou se empatou.
-4 - Guardar em variáveis separadas, quem ganhou cada rodada
-5 - Ao final, verificar e declarar um campeão (melhor de 2 rodadas)
-*/
+  } while (condition);
+}
