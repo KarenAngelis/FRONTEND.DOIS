@@ -5,7 +5,7 @@
           "name": "Server Chrome",
           "request": "launch",
           "url": "http://127.0.0.1:5500/?"
-      }
+      },
       {
           "type": "chrome",
           "name": "Local Chrome",
@@ -23,6 +23,6 @@
           "name": "Local firefox",
           "request": "launch",
           "file": "${workspaceFolder}"
-      },
+      }
   ]
 }
