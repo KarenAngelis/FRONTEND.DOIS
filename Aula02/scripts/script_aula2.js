@@ -1,5 +1,6 @@
 
-console.log("Aula02")
+console.log("Aula 2")
+
 /* @@@@ EXIBIÇÃO E CAPTURA DOS DADOS DO USUÁRIO
 - Alert()
 - Confirm()

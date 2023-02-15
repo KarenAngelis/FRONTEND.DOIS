@@ -1,4 +1,5 @@
 //Quando vou escrever um script separadamente via js, não preciso trazer <script> aqui, basta deixar no html que puxa tudo
+console.log("aula1_script");
 
 let nome = "Ronaldo";
 console.log("Seja bem vindo " + nome);
