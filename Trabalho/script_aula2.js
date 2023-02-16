@@ -1,4 +1,6 @@
-console.log("Aula 2");newFunction();
+console.log("Aula 2")
+
+newFunction();
 
 function newFunction() {
   do {
