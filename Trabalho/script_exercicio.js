@@ -1,51 +1,76 @@
-console.log("Trabalho")
+console.log("Trabalho")   
 
-//1 Papel ganha de pedra
-//2 Pedra ganha de tesoura
-//3 Tesoura ganha de papel
+let vencedorRodada1 = 0;
+let vencedorRodada2 = 0;
+let rodada = 0 ;
+let empate = 0;
+    do  {
 
-//Math.random()
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-// == Prompt para o jogador
+      
+    let jogador1 = prompt("Jogador 1: Digite Pedra =1, Papel=2 ou Tesoura=3");
+    let  jogador2 = getRandomIntInclusive(1, 3);
+    let valorConvertido = parseInt(jogador1);
 
-let usuario = prompt("Qual a sua escolha: pedra, papel ou tesoura?");
+    if (valorConvertido == 1) { // Pedra
+      if (jogador2 == 3) {
+        rodada ++;
+        vencedorRodada1 ++;
+        alert("Pedra quebra tesoura: Pedra venceu!");
 
-let computador = Math.floor((Math.random() * 3 - 1 +1 ) + 1);
-  if (computador < 0.34) {
-	computador = "pedra";
-  } else if(computador <= 0.67) {
-	computador = "papel";
-  } else {
-	computador = "tesoura";
-  } 
-
-
-let compare = function(escolha1,escolha2) {
-    if (escolha1 === escolha2) {
-        return "Empate" + " " + "Jogue novamente." ;
-    }else if (escolha1 === "pedra") {
-        if   (escolha2 === "tesoura") {
-            return "Pedra venceu" + "." + "Melhor de três?";
-        }else{ return "Papel venceu" + "<br>" + "Tente novamente.";
-        } }
-    
-    else if (escolha1 === "papel") {
-        if (escolha2 === "pedra") {
-         return "papel venceu" + "<br>" + "você beat the computer, nice job!";
-        }else { return "tesoura venceu" + "<br>" + "vocêr realmente pequeno computer beat você.";
-        }}
-    
-    else if (escolha1 === "tesoura") {
-        if (escolha2 === "pedra") {
-          return "pedra venceu" + "<br>" + "vocêr realmente pequeno computer beat você.";
-        } else {
-        return "tesoura win" + "<br>" + "você beat the computer, nice job!";
-        }
+      } else if (jogador2 == 2) {
+        rodada ++;
+        vencedorRodada2 ++;
+        alert("Papel envolve a Pedra: Papel venceu!");
+        
+      } else if (jogador2 == 1) {
+        empate ++;
+        rodada ++;
+        alert("Empate, jogue novamente!");
+      }
     }
-    } //closes compare function
+    else if (valorConvertido == 3) { // Tesoura
+      if (jogador2 == 1) {
+        rodada ++;
+        vencedorRodada2 ++;
+        alert("Pedra quebra tesoura: Pedra venceu!");
+      } else if (jogador2 == 2) {
+        rodada ++;
+        vencedorRodada1 ++;
+        alert("tesoura corta papel: Tesoura venceu!");
+      } else if (jogadoe2 == 3) {
+        rodada ++;
+        alert("Empate, jogue novamente!");
+      }
+    }
 
-    
-   document.write("Escolha do robô: " + computador + "<br>");
-   document.write(compare(usuario,computador));
-    
-    
+    else if (valorConvertido == 2) { //Papel
+      if (jogador2 == 1) {
+        rodada ++;
+        vencedorRodada1 ++;
+        alert("Papel envolve pedra: Papel venceu!");
+      } else if (jogador2 == 3) {
+        rodada ++;
+        vencedorRodada2 ++;
+        alert("Tesoura corta papel: Tesoura venceu!");
+      } else if (jogador2 == 2) {
+        rodada ++;
+        alert("Empate, jogue novamente!");
+      }
+
+    }
+
+
+} while ((vencedorRodada1||vencedorRodada2)<3);
+
+
+console.log(vencedorRodada1);
+console.log(vencedorRodada2);
+console.log(empate);
+console.log(rodada);
+
